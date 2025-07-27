@@ -11,7 +11,6 @@ for x in b:
         c.append(b[x][y])
     maxim = max(c)
     for i in b[x]:
-        print(b[x][i], i)
         if maxim == b[x][i]:
             total.append(i)
     ans[x] = ''.join(total)
