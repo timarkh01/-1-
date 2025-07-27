@@ -1,9 +1,8 @@
 a = input()
 ans = {}
-b = {k: {x: 0 for x in a if x != k} for k in a}
+b = {k: {x: 0 for x in a} for k in a}
 for i in range(len(a) - 1):
-    if a[i] != a[i + 1]:
-        b[a[i]][a[i + 1]] += 1
+    b[a[i]][a[i + 1]] += 1
 for x in b:
     c = []
     total = []
@@ -11,9 +10,10 @@ for x in b:
         c.append(b[x][y])
     maxim = max(c)
     for i in b[x]:
+        print(b[x][i], i)
         if maxim == b[x][i]:
             total.append(i)
-    ans[x] = ''.join(total)
+    ans[x] = ''.join(sorted(total))
 print(ans)
 
 '''
